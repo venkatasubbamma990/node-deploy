@@ -6,7 +6,7 @@ let port = 3000
 
 //dotenv.config();
 //connect to DB
-mongoose.connect("mongodb+srv://node:<sudha1454>@cluster0.ajeuigj.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('connected to DB')
 })
 
@@ -19,3 +19,4 @@ app.listen(port,()=>{
 
 //module.exports = app;
 //mongodb://localhost/blogdb   
+//mongodb+srv://node:<sudha1454>@cluster0.ajeuigj.mongodb.net/?retryWrites=true&w=majority
