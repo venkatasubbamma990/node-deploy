@@ -1,17 +1,15 @@
 const app = require('./app');
-//const dotenv = require('dotenv');
+
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 let port = 3000
 
 
-//dotenv.config();
+dotenv.config();
 //connect to DB
-mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect("mongodb://localhost/blogbase",{ useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('connected to DB')
 })
-
-
-
 app.listen(port,()=>{
     console.log(`Express js server starts at http://localhost:${port}`)
 });
